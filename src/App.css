@@ -1,0 +1,19 @@
+.step-bg {
+  width: 100vw;
+  padding: 0;
+}
+
+.remain_days {
+  position: absolute;
+    bottom: 25vh;
+    background: #fff7;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 27px;
+}
+.remain_days.right {
+  right: 25px;
+}
+.remain_days.left {
+  left: 25px;
+}
