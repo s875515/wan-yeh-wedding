@@ -8,12 +8,15 @@
 }
 
 .hint {
-  background-color: #E63370;
+  background-color: #fff7;
+  color: black;
   right: 25px;
   left: initial;
+  width: 300px;
+  line-height: 70px;
+  min-height: 70px;
 }
 .hint span {
-  color: white;
   font-weight: bold;
   font-size: 24px
 }
