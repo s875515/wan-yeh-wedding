@@ -3,10 +3,11 @@ import { Impress, Step } from 'react-impressjs';
 import 'react-impressjs/styles/react-impressjs.css';
 import './App.css';
 
-import ambaLogo from './static/amba_logo.png';
-import hanLogo from './static/han_logo.png';
+import ambaLogo from './static/amba_logo-min.png';
+import hanLogo from './static/han_logo-min.png';
+import landscape from './static/landscape.png';
 import uli from './static/uli.png';
-import welcome from './static/welcome_wan_yeh.png';
+import welcome from './static/welcome_wan_yeh-min.png';
 
 class App extends React.Component {
   // private steps = ['welcome', 'uli', 'kh', 'tp'];
@@ -19,34 +20,41 @@ class App extends React.Component {
   public handleClickTP = () => {
     window.open('https://www.surveycake.com/s/9PMKx');
   }
-  // public handleNext = () => {
-  //   const cur = window.location.hash.split('/')[1];
-  //   const curIdx = this.steps.findIndex(s => s === cur);
-  //   if (curIdx > this.steps.length - 1) {
-  //     window.location.href = window.location.origin + `#/${this.steps[0]}`;
-  //   } else {
-  //     window.location.href = window.location.origin + `#/${this.steps[curIdx + 1]}`;
-  //   }
-  // }
+  public handleRefresh = () => {
+    window.location.reload();
+  }
   public render() {
     const today = new Date();
 
     // 距離台北文定天數
-    const dateTP = new Date('2019-01-19 12:00:00');
+    const dateTP = new Date('2019/01/19 12:00:00');
     let diffTP = dateTP.getTime() - today.getTime();
     diffTP = Math.round(diffTP / (24 * 3600 * 1000));
 
     // 距離高雄結婚天數
-    const dateKH = new Date('2019-02-17 12:00:00');
+    const dateKH = new Date('2019/02/17 12:00:00');
     let diffKH = dateKH.getTime() - today.getTime();
     diffKH = Math.round(diffKH / (24 * 3600 * 1000));
+
+    // 判斷是否橫向
+    const isLandscape = window.innerWidth > window.innerHeight;
+
+    if (!isLandscape) {
+      return (
+        <div id="landscape">
+          <img src={landscape} alt="螢幕請轉向"/>
+          <div>請轉橫向瀏覽，建議使用 Chrome 瀏覽器。</div>
+          <div className="refresh" onClick={this.handleRefresh}>重新整理</div>
+        </div>
+      );
+    }
 
     const hintMessage = <div>請使用 <span>空白鍵</span> 進行瀏覽</div>
 
     return (
       <div>
         <div id="flower-bg" />
-        <Impress hint={true} hintMessage={hintMessage}>
+        <Impress hint={true} hintMessage={hintMessage} rootData={{ width: 512 }}>
           <Step id="welcome" className={'step-bg'} data={{rotateX: -15, y: -650, z: -1000}}>
             <img className="img_welcome" src={welcome} alt="Welcome" />
           </Step>
