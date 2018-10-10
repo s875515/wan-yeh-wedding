@@ -37,7 +37,7 @@ class App extends React.Component {
     diffKH = Math.round(diffKH / (24 * 3600 * 1000));
 
     // 判斷是否橫向
-    const isLandscape = window.innerWidth > window.innerHeight;
+    const isLandscape = window.screen.width > window.screen.height;
 
     if (!isLandscape) {
       return (
