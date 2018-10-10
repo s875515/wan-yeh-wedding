@@ -62,10 +62,10 @@ class App extends React.Component {
               </div>
               <div className="info_detail">
                 <img className="logo" src={hanLogo} alt="漢來logo"/>
-                <div>宴席：<b>中式圓桌</b></div>
+                <div>地點：<b>高雄漢來</b></div>
                 <div>日期：<b>2019.02.17 (日)</b></div>
                 <div>時間：<b>12:00 午宴</b></div>
-                <div>地點：<b>高雄漢來</b></div>
+                <div>宴席：<b>中式圓桌</b></div>
               </div>
               <div className="btn" onClick={this.handleClickKH}>前往填寫問卷</div>
             </div>
@@ -79,10 +79,10 @@ class App extends React.Component {
               </div>
               <div className="info_detail">
                 <img className="logo" src={ambaLogo} alt="amba logo"/>
-                <div>宴席：<b>美式自助</b></div>
+                <div>地點：<b>松山 Amba</b></div>
                 <div>日期：<b>2019.01.19 (六)</b></div>
                 <div>時間：<b>12:00 午宴</b></div>
-                <div>地點：<b>松山 Amba</b></div>
+                <div>宴席：<b>美式自助</b></div>
               </div>
               <div className="btn" onClick={this.handleClickTP}>前往填寫問卷</div>
             </div>
