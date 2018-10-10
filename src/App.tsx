@@ -1,3 +1,4 @@
+import idx from 'idx';
 import * as React from 'react';
 import { Impress, Step } from 'react-impressjs';
 import 'react-impressjs/styles/react-impressjs.css';
@@ -37,9 +38,9 @@ class App extends React.Component {
     diffKH = Math.round(diffKH / (24 * 3600 * 1000));
 
     // 判斷是否橫向
-    const isLandscape = window.screen.width > window.screen.height;
+    const orientation = idx(window, _ => _.orientation);
 
-    if (!isLandscape) {
+    if (orientation === 0) {
       return (
         <div id="landscape">
           <img src={landscape} alt="螢幕請轉向"/>
