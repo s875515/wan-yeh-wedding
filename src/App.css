@@ -33,6 +33,9 @@
   width: 100%;
   -webkit-filter: drop-shadow(2px 5px 1px #eee9);
   -ms-filter: drop-shadow(2px 5px 1px #eee9);
+  filter: drop-shadow(2px 5px 1px #eee9) blur(3px);
+}
+.active .img_welcome {
   filter: drop-shadow(2px 5px 1px #eee9);
 }
 .img_uli {

@@ -59,8 +59,22 @@ class App extends React.Component {
           <Step id="welcome" className={'step-bg'} data={{rotateX: -15, y: -650, z: -1000}}>
             <img className="img_welcome" src={welcome} alt="Welcome" />
           </Step>
-          <Step id="uli" className={'step-bg'} data={{scale: 1.5}}>
-            <img className="img_uli" src={uli} alt="屋哩" />
+          <Step id="tp" data={{x: 340, rotateY: -10}}>
+            <div className="info right">
+              <div className="place_title">#台北</div>
+              <div className="remain">
+                <div className="days">{diffTP}</div>
+                <div className="label">倒數天數</div>
+              </div>
+              <div className="info_detail">
+                <img className="logo" src={ambaLogo} alt="amba logo"/>
+                <div>地點：<b>松山 Amba</b></div>
+                <div>日期：<b>2019.01.19 (六)</b></div>
+                <div>時間：<b>12:00 午宴</b></div>
+                <div>宴席：<b>美式自助</b></div>
+              </div>
+              <div className="btn" onClick={this.handleClickTP}>前往填寫問卷</div>
+            </div>
           </Step>
           <Step id="kh" data={{x: -440, rotateY: 10}}>
             <div className="info">
@@ -79,22 +93,8 @@ class App extends React.Component {
               <div className="btn" onClick={this.handleClickKH}>前往填寫問卷</div>
             </div>
           </Step>
-          <Step id="tp" data={{x: 340, rotateY: -10}}>
-            <div className="info right">
-              <div className="place_title">#台北</div>
-              <div className="remain">
-                <div className="days">{diffTP}</div>
-                <div className="label">倒數天數</div>
-              </div>
-              <div className="info_detail">
-                <img className="logo" src={ambaLogo} alt="amba logo"/>
-                <div>地點：<b>松山 Amba</b></div>
-                <div>日期：<b>2019.01.19 (六)</b></div>
-                <div>時間：<b>12:00 午宴</b></div>
-                <div>宴席：<b>美式自助</b></div>
-              </div>
-              <div className="btn" onClick={this.handleClickTP}>前往填寫問卷</div>
-            </div>
+          <Step id="uli" className={'step-bg'} data={{scale: 1.5}}>
+            <img className="img_uli" src={uli} alt="屋哩" />
           </Step>
         </Impress>
       </div>
