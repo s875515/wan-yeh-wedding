@@ -6,6 +6,10 @@
   -ms-filter: blur(2px) brightness(1.1);
   filter: blur(2px) brightness(1.1);
 }
+#flower-bg.fixed {
+  position: fixed;
+  height: 100%;
+}
 
 .hint {
   background-color: #fff7;
@@ -124,27 +128,93 @@
   width: 300px;
   bottom: -19px;
   /* right: -100px; */
-  opacity: .4;
+  opacity: .35;
 }
 
-#landscape {
-  text-align: center;
+/* Mobile */
+.mobile_container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+.m_flower {
+  background-image: url(./static/flower_bg-min.png);
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+}
+.m_block {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  transition: .2s background-color ease-in;
+}
+.m_block.show {
+  background-color: #3335;
+}
+.m_img_welcome {
+  width: 600px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* left: -30%; */
+  transform: translateX(-15%);
+  filter: drop-shadow(2px 5px 1px #eee9);
 }
-#landscape img {
-  width: 150px;
+.m_img_uli {
+  position: absolute;
+  bottom: 0;
+  /* left: -76%;
+  height: 650px; */
+  min-height: 560px;
+  height: 100vh;
+  transform: translateX(-30.5%);
 }
-#landscape div {
-  margin-top: 10px;
+
+.mobile_container .info {
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  bottom: -170px;
+  transition: .3s bottom ease;
 }
-.refresh {
-  width: 120px;
-  background: slategrey;
-  color: white;
-  padding: 5px 10px;
-  margin: 10px auto 0 auto;
-  border-radius: 4px;
+.mobile_container .info.active {
+  bottom: 10px;
+}
+
+.mobile_container .place_title {
+  font-size: 50px;
+  top: -40px;
+}
+.mobile_container .place_title.right {
+  right: 0;
+}
+
+.mobile_container .remain,
+.mobile_container .info_detail,
+.mobile_container .btn {
+  opacity: 0;
+  transition: .3s opacity ease;
+}
+
+.mobile_container .remain {
+  top: -30px;
+  right: 140px;
+  z-index: 9;
+}
+.mobile_container .info_detail {
+  font-size: 20px;
+}
+.mobile_container .btn {
+  font-size: 20px;
+  position: relative;
+  left: initial;
+  bottom: initial;
+  width: 90%;
+  margin: 5px auto;
+}
+
+.mobile_container .info.active .remain,
+.mobile_container .info.active .info_detail,
+.mobile_container .info.active .btn {
+  opacity: 1;
 }
