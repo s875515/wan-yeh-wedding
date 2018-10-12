@@ -93,7 +93,7 @@ class App extends React.Component<any, { isMobile: boolean, isShowKH: boolean, i
           <div className="m_block" ref={(_) => {this.refBlock = _}} onClick={this.handleClickBlock}/>
           {
             isShowKH &&
-            <div className="m info" ref={(_) => {this.refKH = _}} onClick={this.handleToggleKH}>
+            <div className="info" ref={(_) => {this.refKH = _}} onClick={this.handleToggleKH}>
               <div className="place_title">#高雄</div>
               <div className="remain">
                 <div className="days">{diffKH}</div>
@@ -111,7 +111,7 @@ class App extends React.Component<any, { isMobile: boolean, isShowKH: boolean, i
           }
           {
             isShowTP &&
-            <div className="m info" ref={(_) => {this.refTP = _}} onClick={this.handleToggleTP}>
+            <div className="info" ref={(_) => {this.refTP = _}} onClick={this.handleToggleTP}>
               <div className="place_title right">#台北</div>
               <div className="remain">
                 <div className="days">{diffTP}</div>

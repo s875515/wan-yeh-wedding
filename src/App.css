@@ -1,3 +1,7 @@
+html, body, #root {
+  height: 100%;
+}
+
 #flower-bg {
   background-image: url(./static/flower_bg-min.png);
   width: 100vw;
@@ -59,7 +63,7 @@
   position: relative;
   width: 300px;
   background: #fff7;
-  padding: 40px 20px 5px 20px;
+  padding: 40px 20px 10px 20px;
   border-radius: 20px;
   font-size: 27px;
   overflow: hidden;
@@ -126,16 +130,18 @@
 .logo {
   position: absolute;
   width: 300px;
-  bottom: -19px;
+  bottom: -27px;
   /* right: -100px; */
   opacity: .35;
 }
 
 /* Mobile */
 .mobile_container {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 .m_flower {
   background-image: url(./static/flower_bg-min.png);
@@ -157,28 +163,24 @@
   width: 600px;
   position: absolute;
   /* left: -30%; */
-  transform: translateX(-15%);
-  filter: drop-shadow(2px 5px 1px #eee9);
+  /* transform: translateX(-15%);
+  filter: drop-shadow(2px 5px 1px #eee9); */
 }
 .m_img_uli {
   position: absolute;
-  bottom: 0;
-  /* left: -76%;
-  height: 650px; */
-  min-height: 560px;
   height: 100vh;
-  transform: translateX(-30.5%);
+  transform: translateX(28px);
 }
 
 .mobile_container .info {
   width: 90%;
   position: absolute;
   left: 5%;
-  bottom: -170px;
+  bottom: -85px;
   transition: .3s bottom ease;
 }
 .mobile_container .info.active {
-  bottom: 10px;
+  bottom: 50px;
 }
 
 .mobile_container .place_title {
